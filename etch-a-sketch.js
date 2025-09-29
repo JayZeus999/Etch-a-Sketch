@@ -1,11 +1,18 @@
 const container = document.querySelector("#container");
 
-for (i = 0; i <= 16; i++){
-    const sq11 = document.createElement("div");
-    sq11.classList.add("square");
-    container.appendChild(sq11);
-}
+for (j = 0; j < 16; j++) {
+    for (i = 0; i < 16; i++) {
+        const sq = document.createElement("div");
+        sq.classList.add("square");
 
-// const sq12 = document.createElement("div");
-// sq12.classList.add("square");
-// container.appendChild(sq12);
+        sq.addEventListener("mouseenter", () => {
+            sq.style.backgroundColor = "pink";
+        });
+
+        sq.addEventListener("mouseleave", () => {
+            sq.style.backgroundColor = "blue";
+        });
+        
+        container.appendChild(sq);
+    }
+}
