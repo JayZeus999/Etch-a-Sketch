@@ -8,14 +8,14 @@ document.body.appendChild(pxbtn);
 pxbtn.addEventListener("click", () => {
     let gridAsk = prompt("What grid specs do you want?");
     let n = parseInt(gridAsk);
-    
+
     if (n > 100){
         prompt("Grid specs must be below 100, try again");
     }
 
     container.innerHTML = " ";
 
-    const containerSize = 600;
+    const containerSize = 900;
     const gap = 2;
 
     let totalGap = gap * (n - 1);
@@ -27,7 +27,10 @@ pxbtn.addEventListener("click", () => {
             sq.classList.add("square");
 
             sq.addEventListener("mouseenter", () => {
-                sq.style.backgroundColor = "pink";
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                sq.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
 
             sq.addEventListener("mouseleave", () => {
