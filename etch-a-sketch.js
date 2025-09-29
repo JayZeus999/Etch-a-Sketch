@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 
+
 const pxbtn = document.createElement("button");
 pxbtn.textContent = "Set Grid";
 document.body.appendChild(pxbtn);
@@ -10,7 +11,11 @@ pxbtn.addEventListener("click", () => {
 
     container.innerHTML = "";
 
-    let squareSize = 600 / n;
+    const containerSize = 600;
+    const gap = 2;
+
+    let totalGap = gap * (n - 1);
+    let squareSize = (containerSize - totalGap) / n;
 
     for (j = 0; j < n; j++) {
         for (i = 0; i < n; i++) {
@@ -27,7 +32,7 @@ pxbtn.addEventListener("click", () => {
 
             sq.style.height = `${squareSize}px`
             sq.style.width = `${squareSize}px`
-            
+
             container.appendChild(sq);
         }
     }
