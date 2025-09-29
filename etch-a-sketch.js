@@ -9,7 +9,7 @@ pxbtn.addEventListener("click", () => {
     let gridAsk = prompt("What grid specs do you want?");
     let n = parseInt(gridAsk);
 
-    if (n > 100){
+    if (n > 100) {
         prompt("Grid specs must be below 100, try again");
     }
 
@@ -21,21 +21,24 @@ pxbtn.addEventListener("click", () => {
     let totalGap = gap * (n - 1);
     let squareSize = (containerSize - totalGap) / n;
 
-    for (j = 0; j < n; j++) {
-        for (i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+        for (let i = 0; i < n; i++) {
             const sq = document.createElement("div");
             sq.classList.add("square");
 
+            //for opacity;
+            let opacity = 0;
+
             sq.addEventListener("mouseenter", () => {
-                const r = Math.floor(Math.random() * 256);
-                const g = Math.floor(Math.random() * 256);
-                const b = Math.floor(Math.random() * 256);
-                sq.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                opacity = Math.min(1, opacity + 0.1);
+
+                sq.style.backgroundColor = `rgba(255, 20, 147, ${opacity})`; // deeppink
+
             });
 
-            sq.addEventListener("mouseleave", () => {
-                sq.style.backgroundColor = "pink";
-            });
+            // sq.addEventListener("mouseleave", () => {
+            //     sq.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${sqdarkness})`;
+            // });
 
             sq.style.height = `${squareSize}px`
             sq.style.width = `${squareSize}px`
