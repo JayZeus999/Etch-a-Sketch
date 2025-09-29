@@ -9,7 +9,7 @@ pxbtn.addEventListener("click", () => {
     let gridAsk = prompt("What grid specs do you want?");
     let n = parseInt(gridAsk);
 
-    container.innerHTML = "";
+    container.innerHTML = " ";
 
     const containerSize = 600;
     const gap = 2;
