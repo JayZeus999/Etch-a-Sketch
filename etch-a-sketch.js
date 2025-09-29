@@ -34,7 +34,7 @@ pxbtn.addEventListener("click", () => {
             });
 
             sq.addEventListener("mouseleave", () => {
-                sq.style.backgroundColor = "blue";
+                sq.style.backgroundColor = "pink";
             });
 
             sq.style.height = `${squareSize}px`
