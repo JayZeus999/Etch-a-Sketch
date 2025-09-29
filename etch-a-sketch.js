@@ -8,6 +8,10 @@ document.body.appendChild(pxbtn);
 pxbtn.addEventListener("click", () => {
     let gridAsk = prompt("What grid specs do you want?");
     let n = parseInt(gridAsk);
+    
+    if (n > 100){
+        prompt("Grid specs must be below 100, try again");
+    }
 
     container.innerHTML = " ";
 
